@@ -1,0 +1,35 @@
+1) how to setup a different Python environment
+
+   (1)3.8
+   apt install python3.8-venv
+   python3.8 -m venv ./.py3.8 --prompt=py3.8 #create local version 3.8
+   . ./.py3.8/bin/activate                  #activate local env
+   python -V #see the local version
+
+
+   (2)3.11
+   apt install python3.11-venv
+   python3.11 -m venv ./.py3.11 --prompt=py3.11 #create local version 3.11
+   . ./.py3.11/bin/activate                  #activate local env
+   python -V #see the local version
+2)
+   pip -V && pip3 -v
+   pip3 install -r requirements.txt # get requirements.txt by  pip3 freeze > requirements.txt
+3) 
+   pip3 install termcolor  #import package"termcolor" for local env 
+
+4) two ways to handle App Secret Variables
+  (1) echo "export OPENAI_API_KEY=xxxxxxxxxxxxx3GHH" >> ~/.profile  #make "OPENAI_API_KEY" a system Level variable. 
+      os.getenv("OPENAI_API_KEY") #just one line code.
+
+  (2) save OPENAI_API_KEY into a .env file in the App Folder,make it become an App Level Variable,but in normal operation,
+   the .env file is ignored,  so need special code to  read .env and import its contents into your environment. so
+
+   pip install python-dotenv &&  from dotenv import load_dotenv  &&   load_dotenv()  &&   os.getenv("OPENAI_API_KEY")
+
+   the second method is taken for easy management.
+
+5)Note:
+  Difference between os.getenv and os.environ.get: os.getenv is basically a shortcut to os.environ.get
+
+
