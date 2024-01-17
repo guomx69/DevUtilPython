@@ -59,4 +59,6 @@ def get_transcript(url):
    
     message =response.choices[0].message.content.strip() #.lower().translate(str.maketrans('', '', string.punctuation))
     print(message)
+
+    
    
